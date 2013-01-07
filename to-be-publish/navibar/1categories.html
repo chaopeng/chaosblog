@@ -1,0 +1,29 @@
+{
+layout: "default",
+title: "分类",
+description: "巢鹏的Pensieve文章目录"
+}
+
+<!--:
+for(category in categories!){
+--> 
+	<div class="window_c category_item">
+		<div class="entry_title">
+			<h1>
+				<a name="${category.key}"></a>${category.key}
+			</h1>
+		</div>
+
+		<div class="entry_content" >
+			<ul>
+			<!--:for(article in category.value){-->
+			<li>
+				<a href="${article.relativelink}" class="title_link">${article.meta.title}</a>
+			</li>
+			<!--:}-->
+			</ul>
+		</div>
+	</div>
+<!--:
+}
+-->

@@ -1,0 +1,36 @@
+{
+layout: "default",
+title: "巢鹏的Pensieve",
+description: "巢鹏，专注程序、算法，爱折腾，好读书。"
+}
+
+
+<!--:
+var i = 0;
+for(article in articles!){
+--> 
+	<div class="window_c article_item">
+		<div class="entry_title">
+			<h1>
+				【<a href="${config.path}/categories.html#${article.meta.category}">${article.meta.category}</a>】 
+				<a href="${article.relativelink}" class="title_link">${article.meta.title}</a>
+			</h1>
+			<i class="icon-calendar"></i> ${article.date}
+		</div>
+
+		<div class="entry_content" >
+			${article.firstPart}
+		</div>
+			
+		<div class="entry_tags">
+			<i class="icon-tags"></i> 
+			<!--:for(tag in article.meta.tags){-->
+			<a href="${config.path}/tags.html#${tag}">${tag}</a> 
+			<!--:}-->
+		</div>
+	</div>
+<!--:
+	i=i+1;
+	if(i>9) {break;}
+}
+-->

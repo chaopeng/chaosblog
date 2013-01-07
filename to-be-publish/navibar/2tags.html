@@ -1,0 +1,29 @@
+{
+layout: "default",
+title: "标签",
+description: "巢鹏的Pensieve文章标签"
+}
+
+<!--:
+for(tag in tags!){
+--> 
+	<div class="window_c tag_item">
+		<div class="entry_title">
+			<h1>
+				<a name="${tag.key}"></a>${tag.key}
+			</h1>
+		</div>
+
+		<div class="entry_content" >
+			<ul>
+			<!--:for(article in tag.value){-->
+			<li>
+				<a href="${article.relativelink}" class="title_link">${article.meta.title}</a>
+			</li>
+			<!--:}-->
+			</ul>
+		</div>
+	</div>
+<!--:
+}
+-->

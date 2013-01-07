@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>${article.meta.title}</title>
+<meta name="description" content="${article.meta.description}">
+<meta name="author" content="${config.author}">
+<!--:includeFileTemplate("/_component/includefile.html"){}--> 
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+<!--:includeFileTemplate("/_component/navibar.html"){}--> 
+${layoutContent}
+
+<!--:includeFileTemplate("/_component/copyright.html"){}--> 
+</body>
+</html>

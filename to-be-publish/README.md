@@ -9,12 +9,12 @@
  * \_post的文件必须建立文件头，格式如下:
 
 <pre>
-	以3个\-开头
-	layout=可选，默认为\_layout/page.html
-	title=文章标题
-	description=说明
-	tags=[xxx,xxx,...]
-	以3个\-结束
+以3个\-开头
+layout=可选，默认为\_layout/page.html
+title=文章标题
+description=说明
+tags=[xxx,xxx,...]
+以3个\-结束
 </pre>
 
 * \_template模板主要存放的是侧边栏\导航栏等

@@ -1,0 +1,20 @@
+BlogConfig
+{
+	site: "chaopeng.github.com",
+	path: "/blog",
+	author: "ChaoPeng",
+	blogname: "巢鹏的Pensieve",
+	# set the markdown engine which you like
+	markdownengine: "C:/Python33/markdown_py.bat -x toc -x footnotes -x fenced_code -x tables",
+	inputpath: "",
+	outputpath: "E:\\Documents\\chaosblog\\publish"
+}
+
+AuthorInfo
+{
+	mail: "139025826@qq.com",
+	gravatar: "139025826@qq.com",
+	gravatarserver: "https://secure.gravatar.com",
+	weibo: "http://weibo.com/chaojianpeng",
+	github: "https://github.com/chaopeng"
+}
