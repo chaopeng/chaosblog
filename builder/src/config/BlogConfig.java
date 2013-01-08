@@ -19,7 +19,7 @@ public class BlogConfig {
 	
 	private BlogConfig(){
 		try {
-			JSONObject jo = JsonUtils.readMergerFile("_config.json").get("BlogConfig");
+			JSONObject jo = JsonUtils.readMergerFile(SystemInfo.config_path).get("BlogConfig");
 			JsonUtils.parseJson(jo, this);
 		} catch (Exception e) {
 			LogFactory.getLog(getClass()).error("!!!", e);

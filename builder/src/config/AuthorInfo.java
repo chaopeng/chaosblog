@@ -18,7 +18,7 @@ public class AuthorInfo {
 	
 	private AuthorInfo(){
 		try {
-			JSONObject jo = JsonUtils.readMergerFile("_config.json").get("AuthorInfo");
+			JSONObject jo = JsonUtils.readMergerFile(SystemInfo.config_path).get("AuthorInfo");
 			JsonUtils.parseJson(jo, this);
 		} catch (Exception e) {
 			LogFactory.getLog(getClass()).error("!!!", e);
