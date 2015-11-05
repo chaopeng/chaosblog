@@ -31,7 +31,8 @@ dependencies {
             'org.slf4j:slf4j-api:1.7.7',
             'ch.qos.logback:logback-core:1.1.2',
             'ch.qos.logback:logback-classic:1.1.2',
-            'com.alibaba:fastjson:1.2.7'
+            'com.alibaba:fastjson:1.2.7',
+            'commons-cli:commons-cli:1.3.1'
     )
 }
 
