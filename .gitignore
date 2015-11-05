@@ -1,6 +1,8 @@
 *.class
 *.jar
 *.iml
+*.ipr
+*.iws
 .idea/**
 export/**
 **/build/**
