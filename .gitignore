@@ -4,6 +4,5 @@
 *.ipr
 *.iws
 .idea/**
-export/**
 **/build/**
 .gradle/**
