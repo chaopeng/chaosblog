@@ -4,15 +4,15 @@ apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'com.github.ben-manes.versions'
 
 buildscript {
-	repositories {
-		jcenter()
-	}
+    repositories {
+        jcenter()
+    }
 
-	dependencies {
-		classpath ('com.github.ben-manes:gradle-versions-plugin:0.11.3',
-		'com.github.jengelman.gradle.plugins:shadow:1.2.2'
-		)
-	}
+    dependencies {
+        classpath('com.github.ben-manes:gradle-versions-plugin:0.11.3',
+                'com.github.jengelman.gradle.plugins:shadow:1.2.2'
+        )
+    }
 }
 
 // check dependencyUpdates : gradle dependencyUpdates -Drevision=release
@@ -21,25 +21,22 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	compile (
-		'com.google.guava:guava:18.+',
-		'commons-codec:commons-codec:1.9',
-		'org.slf4j:slf4j-api:1.7.7',
-		'ch.qos.logback:logback-core:1.1.2',
-		'ch.qos.logback:logback-classic:1.1.2',
-		'org.springframework:spring-context:4.1.1.RELEASE',
-	)
-	testCompile (
-		'junit:junit:4.+'
-	) 
+    compile(
+            'com.google.guava:guava:18.+',
+            'commons-codec:commons-codec:1.9',
+            'org.slf4j:slf4j-api:1.7.7',
+            'ch.qos.logback:logback-core:1.1.2',
+            'ch.qos.logback:logback-classic:1.1.2',
+            'com.alibaba:fastjson:1.2.7'
+    )
 }
 
 jar {
-	manifest {
-		attributes 'Main-Class': 'main.ChaosBlog'
-	}
+    manifest {
+        attributes 'Main-Class': 'me.chaopeng.chaosblog.main.ChaosBlog'
+    }
 }
