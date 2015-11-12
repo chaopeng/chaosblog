@@ -7,3 +7,4 @@
 **/build/**
 .gradle/**
 /published/blog
+/to-be-publish/post
