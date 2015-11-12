@@ -26,13 +26,18 @@ repositories {
 
 dependencies {
     compile(
-            'com.google.guava:guava:18.+',
+            'com.google.guava:guava:18.0',
             'commons-codec:commons-codec:1.9',
-            'org.slf4j:slf4j-api:1.7.7',
-            'ch.qos.logback:logback-core:1.1.2',
-            'ch.qos.logback:logback-classic:1.1.2',
-            'com.alibaba:fastjson:1.2.7',
-            'commons-cli:commons-cli:1.3.1'
+            'org.slf4j:slf4j-api:1.7.13',
+            'ch.qos.logback:logback-core:1.1.3',
+            'ch.qos.logback:logback-classic:1.1.3',
+            'com.fasterxml.jackson.core:jackson-core:2.6.3',
+            'com.fasterxml.jackson.core:jackson-annotations:2.6.3',
+            'com.fasterxml.jackson.core:jackson-databind:2.6.3',
+            'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.6.3',
+            'commons-cli:commons-cli:1.3.1',
+            'com.ibeetl:beetl:2.2.7',
+            'com.kenai.nbpwr:com-sun-syndication-feed:1.0-201002241208'
     )
 }
 

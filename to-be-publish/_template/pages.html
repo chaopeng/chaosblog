@@ -10,13 +10,13 @@
 
 			<div class="entry_content" >
 				${article.text}
-				<!--:includeFileTemplate("/_component/cc.html"){}--> 
-				<!--:includeFileTemplate("/_component/comments.html"){}--> 
+				<!--:include("/_component/cc.html"){}-->
+				<!--:include("/_component/comments.html"){}-->
 			</div>
 		</div>
 		<div class="span3">
-			<div class="window_r">
-				<!--:includeFileTemplate("/_component/sidebar.html"){}--> 
+			<div id="sidebar" class="window_r">
+				<!--:include("/_component/sidebar.html"){}-->
 			</div>
 		</div>
 	</div>

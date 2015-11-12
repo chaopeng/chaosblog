@@ -1,33 +1,37 @@
 package utils;
 
-import java.io.File;
+import config.Blog;
+import org.beetl.core.Configuration;
+import org.beetl.core.GroupTemplate;
+import org.beetl.core.resource.FileResourceLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.bee.tl.core.GroupTemplate;
-import org.bee.tl.ext.IncludeFileTemplateTag;
-import org.bee.tl.ext.LayoutTag;
-
-import config.BlogConfig;
+import java.io.IOException;
 
 /**
  * @author chao
  */
 public class BeetlUtils {
-	private static GroupTemplate group;
-	public static GroupTemplate getGroup(){
-		return group;
-	}
-	
-	static{
-		String home = BlogConfig.getIns().inputpath;
-		group = new GroupTemplate(new File(home));
-		group.setCharset("UTF-8");
-		group.config("<!--:", "-->", "${", "}");
-		registerTag();
-	}
-	
-	private static void registerTag(){
-		group.registerTag("includeFileTemplate", IncludeFileTemplateTag.class);
-		group.registerTag("layout", LayoutTag.class);
-	}
-	
+
+    private static final Logger logger = LoggerFactory.getLogger(BeetlUtils.class);
+
+    private static GroupTemplate group;
+
+    public static GroupTemplate getGroup() {
+        return group;
+    }
+
+    static {
+        try {
+            String root = Blog.getIns().inputpath;
+            FileResourceLoader resourceLoader = new FileResourceLoader(root, "utf-8");
+            Configuration cfg = Configuration.defaultConfiguration();
+            group = new GroupTemplate(resourceLoader, cfg);
+        } catch (IOException e) {
+            logger.error(e.getMessage(), e);
+        }
+    }
+
+
 }
