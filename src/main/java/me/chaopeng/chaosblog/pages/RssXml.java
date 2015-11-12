@@ -22,23 +22,23 @@ public class RssXml {
         int len = articles.length > 20 ? 20 : articles.length;
         for (int i = 0; i < len; ++i) {
             ChannelItem item = new ChannelItem();
-            item.setAuthor(Blog.getIns().author);
-            item.setCategory(articles[i].meta.category);
-            item.setDescription(articles[i].meta.description);
-            item.setLink("http://" + articles[i].absolutelink);
-            item.setPubDate(DateUtils.parseDate(articles[i].date));
-            item.setTitle(articles[i].meta.title);
+            item.setAuthor(Blog.getIns().getAuthor());
+            item.setCategory(articles[i].getMeta().category);
+            item.setDescription(articles[i].getMeta().description);
+            item.setLink("http://" + articles[i].getAbsolutelink());
+            item.setPubDate(DateUtils.parseDate(articles[i].getDate()));
+            item.setTitle(articles[i].getMeta().title);
             builder.buildItems(item);
         }
 
-        builder.buildChannel(Blog.getIns().blogname
+        builder.buildChannel(Blog.getIns().getBlogname()
                 , "http://", IndexPage.description, "zh-cn"
                 , new Date()
-                , "Copyright " + Blog.getIns().blogname);
+                , "Copyright " + Blog.getIns().getBlogname());
 
         try {
-            builder.buildChannel(Blog.getIns().outputpath
-                    + Blog.getIns().path
+            builder.buildChannel(Blog.getIns().getOutputpath()
+                    + Blog.getIns().getPath()
                     + File.separator + "rss.xml");
         } catch (Exception e) {
             logger.error(e.getMessage(), e);

@@ -7,13 +7,13 @@ public class Blog {
 
     private static Blog ins;
 
-    public String site;
-    public String path;
-    public String markdownengine;
-    public String author;
-    public String blogname;
-    public String inputpath;
-    public String outputpath;
+    private String site;
+    private String path;
+    private String markdownengine;
+    private String author;
+    private String blogname;
+    private String inputpath;
+    private String outputpath;
 
     public String getSite() {
         return site;

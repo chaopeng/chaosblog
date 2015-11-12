@@ -22,7 +22,7 @@ public class NaviPages {
     private static final Logger logger = LoggerFactory.getLogger(NaviPages.class);
 
     public static void print() {
-        File[] files = DirUtils.ls(Blog.getIns().inputpath
+        File[] files = DirUtils.ls(Blog.getIns().getInputpath()
                 + File.separator + "navibar", "\\.html$");
         for (File file : files) {
             Article article = new Article();
@@ -31,16 +31,16 @@ public class NaviPages {
             try {
                 GroupTemplate group = BeetlUtils.getGroup();
                 Template template = group.getTemplate("_template"
-                        + File.separator + article.meta.layout + ".html");
+                        + File.separator + article.getMeta().layout + ".html");
                 template.binding("config", Blog.getIns());
                 template.binding("author", Author.getIns());
                 template.binding("article", article);
                 template.binding("naviLs", Navibar.getNavibarLs());
                 String s = template.render();
 
-                String tempPath = File.separator + ".temp" + File.separator + article.name;
+                String tempPath = File.separator + ".temp" + File.separator + article.getName();
 
-                FileWriter fw = new FileWriter(Blog.getIns().inputpath + tempPath);
+                FileWriter fw = new FileWriter(Blog.getIns().getInputpath() + tempPath);
                 fw.write(s);
                 fw.close();
 
@@ -52,8 +52,10 @@ public class NaviPages {
                 template.binding("config", Blog.getIns());
                 s = template.render();
 
-                fw = new FileWriter(Blog.getIns().outputpath
-                        + article.relativelink);
+                DirUtils.mkdir(Blog.getIns().getOutputpath() + article.getPath());
+
+                fw = new FileWriter(Blog.getIns().getOutputpath()
+                        + article.getRelativelink());
                 fw.write(s);
                 fw.close();
             } catch (Exception e) {

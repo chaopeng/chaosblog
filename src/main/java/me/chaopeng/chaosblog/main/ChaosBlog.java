@@ -44,18 +44,18 @@ public class ChaosBlog {
         Author.setIns(config.getAuthor());
         Blog.setIns(config.getBlog());
 
-        DirUtils.rm(Blog.getIns().outputpath + File.separator
-                + Blog.getIns().path + File.separator, "^[^\\.]");
+        DirUtils.rm(Blog.getIns().getOutputpath() + File.separator
+                + Blog.getIns().getPath() + File.separator, "^[^\\.]");
 
-        DirUtils.mkdir(Blog.getIns().inputpath + File.separator + ".temp"
+        DirUtils.mkdir(Blog.getIns().getInputpath() + File.separator + ".temp"
                 + File.separator);
         IndexPage.print();
         NaviPages.print();
         ArticlePages.getIns().print();
 
-        DirUtils.rm(Blog.getIns().inputpath + File.separator + ".temp"
+        DirUtils.rm(Blog.getIns().getInputpath() + File.separator + ".temp"
                 + File.separator);
-        DirUtils.rmdir(Blog.getIns().inputpath + File.separator + ".temp"
+        DirUtils.rmdir(Blog.getIns().getInputpath() + File.separator + ".temp"
                 + File.separator);
 
         RssXml.print();

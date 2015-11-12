@@ -24,7 +24,7 @@ public class BeetlUtils {
 
     static {
         try {
-            String root = Blog.getIns().inputpath;
+            String root = Blog.getIns().getInputpath();
             FileResourceLoader resourceLoader = new FileResourceLoader(root, "utf-8");
             Configuration cfg = Configuration.defaultConfiguration();
             group = new GroupTemplate(resourceLoader, cfg);

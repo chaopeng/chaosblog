@@ -23,13 +23,14 @@ public class Article {
 
     private static final Logger logger = LoggerFactory.getLogger(Article.class);
 
-    public MetaInfo meta;
-    public String date;
-    public String name;
-    public String type;
-    public String text;
-    public String relativelink;
-    public String absolutelink;
+    private MetaInfo meta;
+    private String date;
+    private String name;
+    private String type;
+    private String text;
+    private String relativelink;
+    private String absolutelink;
+    private String path;
 
     private static Pattern datePattern = Pattern
             .compile("^\\d{4}-\\d{2}-\\d{2}-");
@@ -42,26 +43,39 @@ public class Article {
             File file = new File(filepath);
 
             boolean isArticle = datePattern.matcher(file.getName()).find();
+            boolean isIndex = file.getName().contains("index.html");
+
             if (isArticle) {
                 String[] info = FileUtils.getFileNameEx(file.getName());
                 date = info[0];
                 name = info[1];
                 type = info[2];
 
-                relativelink = Blog.getIns().path + "/"
+                relativelink = Blog.getIns().getPath() + "/"
                         + date.replace("-", "/") + "/" + name + ".html";
             }
-            // 类似index 那些
+            // index
+            else if (isIndex){
+                name = FileUtils.getFileName(file.getName());
+                type = FileUtils.getFileType(file.getName());
+                while (numStart.matcher(name).find()) {
+                    name = name.substring(1);
+                }
+                relativelink = Blog.getIns().getPath() + "/" + name + ".html";
+            }
+
+            // navbar
             else {
                 name = FileUtils.getFileName(file.getName());
                 type = FileUtils.getFileType(file.getName());
                 while (numStart.matcher(name).find()) {
                     name = name.substring(1);
                 }
-                relativelink = Blog.getIns().path + "/" + name + ".html";
+                relativelink = Blog.getIns().getPath() + "/" + name + "/" + name + ".html";
+                path = Blog.getIns().getPath() + "/" + name;
             }
 
-            absolutelink = Blog.getIns().site + relativelink;
+            absolutelink = Blog.getIns().getSite() + relativelink;
             // 读取文件信息
             FileReader fr = new FileReader(filepath);
             BufferedReader br = new BufferedReader(fr);
@@ -79,7 +93,7 @@ public class Article {
                 fw.write(sb.toString());
                 fw.close();
 
-                text = ExecUtils.run(Blog.getIns().markdownengine
+                text = ExecUtils.run(Blog.getIns().getMarkdownengine()
                         + " temp");
 
                 DirUtils.rm("temp");
@@ -129,5 +143,9 @@ public class Article {
 
     public String getAbsolutelink() {
         return absolutelink;
+    }
+
+    public String getPath() {
+        return path;
     }
 }

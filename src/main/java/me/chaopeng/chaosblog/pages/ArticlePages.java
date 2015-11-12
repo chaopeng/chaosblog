@@ -29,14 +29,14 @@ public class ArticlePages {
 
     private ArticlePages() {
         // 遍历post文件夹所有md/html后缀的文件
-        File[] files = DirUtils.recursive(Blog.getIns().inputpath + File.separator + "post", "\\.(md|html)$");
+        File[] files = DirUtils.recursive(Blog.getIns().getInputpath() + File.separator + "post", "\\.(md|html)$");
         articles = new Article[files.length];
         for (int i = 0; i < files.length; i++) {
             articles[i] = new Article();
             articles[i].readArticle(files[i].getAbsolutePath());
         }
 
-        Arrays.sort(articles, (o1, o2) -> 0 - o1.date.compareTo(o2.date));
+        Arrays.sort(articles, (o1, o2) -> 0 - o1.getDate().compareTo(o2.getDate()));
 
         tagsArticle = new TreeMap<>((Comparator<String>) String::compareTo);
 
@@ -46,7 +46,7 @@ public class ArticlePages {
 
         for (Article article : articles) {
             // 按标签加入
-            for (String tag : article.meta.tags) {
+            for (String tag : article.getMeta().tags) {
                 List<Article> ls = tagsArticle.get(tag);
                 if (ls == null) {
                     ls = new ArrayList<>();
@@ -55,14 +55,14 @@ public class ArticlePages {
                 ls.add(article);
             }
             // 按分类加入
-            List<Article> catLs = catalogueArticle.get(article.meta.category);
+            List<Article> catLs = catalogueArticle.get(article.getMeta().category);
             if (catLs == null) {
                 catLs = new ArrayList<>();
-                catalogueArticle.put(article.meta.category, catLs);
+                catalogueArticle.put(article.getMeta().category, catLs);
             }
             catLs.add(article);
             // 按时间加入
-            String yyyymm = article.date.substring(0, 7);
+            String yyyymm = article.getDate().substring(0, 7);
             List<Article> dateLs = dateArticle.get(yyyymm);
             if (dateLs == null) {
                 dateLs = new ArrayList<>();
@@ -75,9 +75,9 @@ public class ArticlePages {
     public void print() {
         for (int i = 0; i < articles.length; i++) {
             // 确保目录存在
-            DirUtils.mkdir(Blog.getIns().outputpath
-                    + Blog.getIns().path
-                    + File.separator + articles[i].date.replace("-", File.separator));
+            DirUtils.mkdir(Blog.getIns().getOutputpath()
+                    + Blog.getIns().getPath()
+                    + File.separator + articles[i].getDate().replace("-", File.separator));
             // 生成网页
             try {
                 GroupTemplate group = BeetlUtils.getGroup();
@@ -90,7 +90,7 @@ public class ArticlePages {
                 template.binding("naviLs", Navibar.getNavibarLs());
 
                 // 输出文件
-                FileWriter fw = new FileWriter(Blog.getIns().outputpath + articles[i].relativelink);
+                FileWriter fw = new FileWriter(Blog.getIns().getOutputpath() + articles[i].getRelativelink());
                 fw.append(template.render());
                 fw.close();
             } catch (Exception e) {

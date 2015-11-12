@@ -9,11 +9,11 @@ public class Author {
 
     private static Author ins;
 
-    public String mail;
-    public String gravatar;
-    public String gravatarserver;
-    public String weibo;
-    public String github;
+    private String mail;
+    private String gravatar;
+    private String gravatarserver;
+    private String weibo;
+    private String github;
 
     public void setMail(String mail) {
         this.mail = mail;

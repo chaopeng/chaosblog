@@ -24,21 +24,21 @@ public class IndexPage {
 
     public static void print() {
         Article article = new Article();
-        article.readArticle(Blog.getIns().inputpath + File.separator + "index.html");
-        description = article.meta.description;
+        article.readArticle(Blog.getIns().getInputpath() + File.separator + "index.html");
+        description = article.getMeta().description;
 
         try {
             GroupTemplate group = BeetlUtils.getGroup();
-            Template template = group.getTemplate("_template" + File.separator + article.meta.layout + ".html");
+            Template template = group.getTemplate("_template" + File.separator + article.getMeta().layout + ".html");
             template.binding("config", Blog.getIns());
             template.binding("author", Author.getIns());
             template.binding("article", article);
             template.binding("naviLs", Navibar.getNavibarLs());
             String s = template.render();
 
-            String tempPath = File.separator + ".temp" + File.separator + article.name;
+            String tempPath = File.separator + ".temp" + File.separator + article.getName();
 
-            FileWriter fw = new FileWriter(Blog.getIns().inputpath + tempPath);
+            FileWriter fw = new FileWriter(Blog.getIns().getInputpath() + tempPath);
             fw.write(s);
             fw.close();
 
@@ -47,7 +47,7 @@ public class IndexPage {
             template.binding("config", Blog.getIns());
             s = template.render();
 
-            fw = new FileWriter(Blog.getIns().outputpath + article.relativelink);
+            fw = new FileWriter(Blog.getIns().getOutputpath() + article.getRelativelink());
             fw.write(s);
             fw.close();
         } catch (Exception e) {
