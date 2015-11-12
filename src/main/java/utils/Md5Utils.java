@@ -1,6 +1,7 @@
 package utils;
 
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -8,6 +9,9 @@ import java.security.NoSuchAlgorithmException;
  * @author chao
  */
 public class Md5Utils {
+
+    private static final Logger logger = LoggerFactory.getLogger(Md5Utils.class);
+
     private static char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             'a', 'b', 'c', 'd', 'e', 'f'};
 
@@ -34,7 +38,7 @@ public class Md5Utils {
             s = new String(str);// 换后的结果转换为字符串
 
         } catch (NoSuchAlgorithmException e) {
-            LogFactory.getLog(Md5Utils.class).error("!!!", e);
+            logger.error(e.getMessage(), e);
         }
         return s;
     }
