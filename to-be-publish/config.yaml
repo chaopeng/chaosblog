@@ -9,8 +9,8 @@ blog:
   outputpath: /data/chao/workspace/chaosblog/published
 
 author:
-  mail: chaopeng@chaopeng.com
-  gravatar: chaopeng@chaopeng.com
+  mail: chaopeng@chaopeng.me
+  gravatar: chaopeng@chaopeng.me
   gravatarserver: https://secure.gravatar.com
   weibo: http://weibo.com/chaojianpeng
   github: https://github.com/chaopeng
