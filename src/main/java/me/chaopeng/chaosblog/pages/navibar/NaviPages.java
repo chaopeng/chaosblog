@@ -32,7 +32,7 @@ public class NaviPages {
                 GroupTemplate group = BeetlUtils.getGroup();
                 Template template = group.getTemplate("_template"
                         + File.separator + article.meta.layout + ".html");
-                template.binding("me/chaopeng/chaosblog/config", Blog.getIns());
+                template.binding("config", Blog.getIns());
                 template.binding("author", Author.getIns());
                 template.binding("article", article);
                 template.binding("naviLs", Navibar.getNavibarLs());
@@ -49,7 +49,7 @@ public class NaviPages {
                 template.binding("categories", ArticlePages.getIns().catalogueArticle);
                 template.binding("archives", ArticlePages.getIns().dateArticle);
                 template.binding("tags", ArticlePages.getIns().tagsArticle);
-                template.binding("me/chaopeng/chaosblog/config", Blog.getIns());
+                template.binding("config", Blog.getIns());
                 s = template.render();
 
                 fw = new FileWriter(Blog.getIns().outputpath

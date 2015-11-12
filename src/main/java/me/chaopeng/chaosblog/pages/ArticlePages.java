@@ -104,7 +104,7 @@ public class ArticlePages {
                 Template template = group.getTemplate(
                         "_template" + File.separator
                                 + articles[i].getMeta().layout + ".html");
-                template.binding("me/chaopeng/chaosblog/config", Blog.getIns());
+                template.binding("config", Blog.getIns());
                 template.binding("author", Author.getIns());
                 template.binding("article", articles[i]);
                 template.binding("naviLs", Navibar.getNavibarLs());

@@ -68,7 +68,7 @@ public class Article {
 
             StringBuilder sb = new StringBuilder();
 
-            meta = JsonUtils.decode(br, MetaInfo.class);
+            meta = JsonUtils.readJson(br, MetaInfo.class);
 
             String line = null;
             while ((line = br.readLine()) != null)
