@@ -24,7 +24,7 @@ public class RssBuildFactory {
     public RssBuildFactory() {
         feed = new SyndFeedImpl();
         feed.setFeedType("rss_2.0");
-        entries = new ArrayList<SyndEntry>();
+        entries = new ArrayList<>();
     }
 
     /**

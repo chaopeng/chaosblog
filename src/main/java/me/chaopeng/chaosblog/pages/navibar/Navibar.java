@@ -18,13 +18,7 @@ public class Navibar {
         File[] files = DirUtils.ls(Blog.getIns().inputpath + "/navibar");
         NavibarLs = new Article[files.length];
 
-        Arrays.sort(files, new Comparator<File>() {
-
-            @Override
-            public int compare(File o1, File o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+        Arrays.sort(files, (o1, o2) -> o1.getName().compareTo(o2.getName()));
 
         int i = -1;
         for (File file : files) {

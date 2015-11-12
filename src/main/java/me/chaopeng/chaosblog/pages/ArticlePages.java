@@ -36,40 +36,20 @@ public class ArticlePages {
             articles[i].readArticle(files[i].getAbsolutePath());
         }
 
-        Arrays.sort(articles, new Comparator<Article>() {
-            @Override
-            public int compare(Article o1, Article o2) {
-                return 0 - o1.date.compareTo(o2.date);
-            }
-        });
+        Arrays.sort(articles, (o1, o2) -> 0 - o1.date.compareTo(o2.date));
 
-        tagsArticle = new TreeMap<String, List<Article>>(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        tagsArticle = new TreeMap<>((Comparator<String>) String::compareTo);
 
-        catalogueArticle = new TreeMap<String, List<Article>>(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        catalogueArticle = new TreeMap<>((Comparator<String>) String::compareTo);
 
-        dateArticle = new TreeMap<String, List<Article>>(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return 0 - o1.compareTo(o2);
-            }
-        });
+        dateArticle = new TreeMap<>((Comparator<String>) (o1, o2) -> 0 - o1.compareTo(o2));
 
         for (Article article : articles) {
             // 按标签加入
             for (String tag : article.meta.tags) {
                 List<Article> ls = tagsArticle.get(tag);
                 if (ls == null) {
-                    ls = new ArrayList<Article>();
+                    ls = new ArrayList<>();
                     tagsArticle.put(tag, ls);
                 }
                 ls.add(article);
@@ -77,7 +57,7 @@ public class ArticlePages {
             // 按分类加入
             List<Article> catLs = catalogueArticle.get(article.meta.category);
             if (catLs == null) {
-                catLs = new ArrayList<Article>();
+                catLs = new ArrayList<>();
                 catalogueArticle.put(article.meta.category, catLs);
             }
             catLs.add(article);
@@ -85,7 +65,7 @@ public class ArticlePages {
             String yyyymm = article.date.substring(0, 7);
             List<Article> dateLs = dateArticle.get(yyyymm);
             if (dateLs == null) {
-                dateLs = new ArrayList<Article>();
+                dateLs = new ArrayList<>();
                 dateArticle.put(yyyymm, dateLs);
             }
             dateLs.add(article);

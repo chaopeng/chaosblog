@@ -39,18 +39,14 @@ public class DirUtils {
             patterns[i] = Pattern.compile(args[i]);
         }
 
-        return dir.listFiles(new FilenameFilter() {
-
-            @Override
-            public boolean accept(File dir, String name) {
-                for (Pattern pattern : patterns) {
-                    Matcher matcher = pattern.matcher(name);
-                    if (matcher.find()) {
-                        return true;
-                    }
+        return dir.listFiles((dir1, name) -> {
+            for (Pattern pattern : patterns) {
+                Matcher matcher = pattern.matcher(name);
+                if (matcher.find()) {
+                    return true;
                 }
-                return false;
             }
+            return false;
         });
     }
 
@@ -62,8 +58,8 @@ public class DirUtils {
      * @return
      */
     public static File[] recursive(String path, String... args) {
-        List<File> resLs = new ArrayList<File>();
-        Queue<File> dirs = new LinkedList<File>();
+        List<File> resLs = new ArrayList<>();
+        Queue<File> dirs = new LinkedList<>();
 
         File file = new File(path);
         dirs.offer(file);

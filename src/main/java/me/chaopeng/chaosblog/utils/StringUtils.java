@@ -45,7 +45,7 @@ public class StringUtils {
 
     public static List<Integer> toIntLs(String s, String split) {
         String[] intStr = s.split(split);
-        List<Integer> res = new ArrayList<Integer>(intStr.length);
+        List<Integer> res = new ArrayList<>(intStr.length);
         for (int i = 0; i < intStr.length; ++i) {
             res.add(toInt(intStr[i]));
         }
