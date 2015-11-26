@@ -15,7 +15,6 @@ for(article in articles!){
 				【<a href="${config.path}/categories.html#${article.meta.category}">${article.meta.category}</a>】
 				<a href="${article.relativelink}" class="title-link">${article.meta.title}</a>
 			</h1>
-			<div><i class="fa fa-calendar"></i> ${article.date}</div>
 		</div>
 
 		<div class="post-content" >
@@ -29,7 +28,7 @@ for(article in articles!){
 			<!--:}-->
 		</div>
 	</div>
-</div>
+
 <!--:
 	i=i+1;
 	if(i==8) {break;}

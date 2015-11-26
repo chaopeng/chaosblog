@@ -14,5 +14,9 @@
 ${layoutContent}
 
 <!--:include("/_component/copyright.html"){}-->
+
+<!--back to top-->
+<a href="#" id="back-to-top"><i class="fa fa-angle-up fa-4x"></i></a>
+
 </body>
 </html>
