@@ -6,19 +6,19 @@ description: "巢鹏的Pensieve文章归档"
 
 <!--:
 for(archive in archives!){
---> 
-	<div class="window_c archive_item">
-		<div class="entry_title">
+-->
+	<div class="archive-item">
+		<div class="post-title">
 			<h1>
 				<a name="${archive.key}"></a>${archive.key}
 			</h1>
 		</div>
 
-		<div class="entry_content" >
+		<div class="posts" >
 			<ul>
 			<!--:for(article in archive.value){-->
 			<li>
-				<a href="${article.relativelink}" class="title_link">${article.meta.title}</a>
+				<a href="${article.relativelink}" class="title-link">${article.meta.title}</a>
 			</li>
 			<!--:}-->
 			</ul>

@@ -1,15 +1,15 @@
 blog:
-  site: chaopeng.github.com
+  site: chaopeng.me
   path: /blog
   author: ChaoPeng
   blogname: 巢鹏的Pensieve
   # set the markdown engine which you like
   markdownengine: python3 -m markdown -x toc -x footnotes -x fenced_code -x tables
-  inputpath: /data/chao/workspace/chaosblog/to-be-publish
-  outputpath: /data/chao/workspace/chaosblog/published
+  inputpath: /home/chao/blog/to-be-publish
+  outputpath: /home/chao/blog/chaopeng.github.com
 
 author:
-  mail: chaopeng@chaopeng.me
+  mail: chaojianpeng@gmail.com
   gravatar: chaopeng@chaopeng.me
   gravatarserver: https://secure.gravatar.com
   weibo: http://weibo.com/chaojianpeng

@@ -8,33 +8,34 @@ description: "巢鹏，专注程序、算法，爱折腾，好读书。"
 <!--:
 var i = 0;
 for(article in articles!){
---> 
-	<div class="window_c article_item">
-		<div class="entry_title">
+-->
+	<div class="post-item">
+		<div class="post-title">
 			<h1>
-				【<a href="${config.path}/categories.html#${article.meta.category}">${article.meta.category}</a>】 
-				<a href="${article.relativelink}" class="title_link">${article.meta.title}</a>
+				【<a href="${config.path}/categories.html#${article.meta.category}">${article.meta.category}</a>】
+				<a href="${article.relativelink}" class="title-link">${article.meta.title}</a>
 			</h1>
-			<i class="icon-calendar"></i> ${article.date}
+			<div><i class="fa fa-calendar"></i> ${article.date}</div>
 		</div>
 
-		<div class="entry_content" >
+		<div class="post-content" >
 			${article.firstPart}
 		</div>
-			
-		<div class="entry_tags">
-			<i class="icon-tags"></i> 
+
+		<div class="post-tags">
+			<i class="fa fa-tags"></i>
 			<!--:for(tag in article.meta.tags){-->
-			<a href="${config.path}/tags.html#${tag}">${tag}</a> 
+			<a href="${config.path}/tags.html#${tag}">${tag}</a>
 			<!--:}-->
 		</div>
 	</div>
+</div>
 <!--:
 	i=i+1;
-	if(i==5) {break;}
+	if(i==8) {break;}
 }
 -->
 
-<div class="window_c" style="text-align: center;">
+<div class="more">
 <a href="/blog/archive.html">更多文章</a>
 </div>

@@ -1,60 +1,42 @@
-<div class="namebox">
+<div>
 	<div class="left">
 		<img alt="avatar" src="${author.avatar}">
 	</div>
-	<div class="right">
-		<a href="mailto:${author.mail}" target="_blank">联系我 <i class="fa fa-envelope"></i></a>
-		<br>
-		<a href="${author.weibo}" target="_blank">关注我的微博 <i class="fa fa-weibo"></i></a>
-		<br>
-		<a href="${author.github}" target="_blank">关注我的开源 <i class="fa fa-github"></i></a>
-		<br>
-	</div>
+	<ul class="right">
+		<li><a href="mailto:${author.mail}"><i class="fa fa-envelope-o"></i> E-Mail</a></li>
+		<li><a href="${author.weibo}" target="_blank"><i class="fa fa-weibo"></i> Weibo</a></li>
+		<li><a onclick="javascript:openMyWechat('${author.wechat}');" href="javascript:void(0);"><i class="fa fa-wechat"></i>Wechat</a></li>
+		<li><a href="${author.github}" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+	</ul>
 </div>
-
-<form><fieldset class="line"><legend>分享</legend></fieldset></form>
-
-
-<!-- baidu Button BEGIN -->
-<div class="bdsharebuttonbox">
-	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="bds_more" data-cmd="more"></a>
-</div> 
-<script>
-window._bd_share_config = {
-    "common": {
-        "bdSnsKey": {},
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": "",
-        "bdStyle": "1",
-        "bdSize": "24"
-    },
-    "share": {},
-};
-with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~ ( - new Date() / 36e5)];
-</script>
-<!-- baidu Button END -->
-
-
-<form><fieldset class="line"><legend>本文标签</legend></fieldset></form>
 
 <div>
-<ul>
-<!--:for(tag in article.meta.tags){-->
-	<li>
-		<i class="icon-tag"></i> <a href="${config.path}/tags.html#${tag}">${tag}</a>
-	</li>
-<!--:}-->
-</ul>
+	<h2>分享</h2>
+	<a class="share wb" onclick="javascript:shareToWeibo();" href="javascript:void(0);"><i class="fa fa-weibo fa-2x"></i></a>
+	<a class="share wc" href="javascript:shareToWechat();" target="_blank"><i class="fa fa-wechat fa-2x"></i></a>
 </div>
-<form><fieldset class="line"><legend>友情链接</legend></fieldset></form>
-<ul>
-	<li><a href="http://www.wutianqi.com/" target="_blank">TankyWoo基神的博客</a></li>
-    <li><a href="http://www.thislinux.com/" target="_blank">龙哥的博客</a></li>
-</ul>
 
-<form><fieldset class="line"><legend>声明</legend></fieldset></form>
-本博客仅供自娱自乐，<br>不喜勿喷。<br>欢迎捐助！
+<div>
+	<h2>标签</h2>
+	<ul>
+		<!--:for(tag in article.meta.tags){-->
+		<li>
+			<i class="fa fa-tag"></i> <a href="${config.path}/tags.html#${tag}">${tag}</a>
+		</li>
+		<!--:}-->
+	</ul>
+</div>
+
+<div>
+	<h2>友情链接</h2>
+	<ul>
+		<li><a href="http://www.wutianqi.com/" target="_blank">TankyWoo基神的博客</a></li>
+		<li><a href="http://www.thislinux.com/" target="_blank">龙哥的博客</a></li>
+	</ul>
+</div>
+
+<div>
+	<h2>声明</h2>
+	本博客仅供自娱自乐。
+	<br>欢迎捐助！
+</div>

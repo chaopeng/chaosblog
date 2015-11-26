@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tiled {
+  text-align: center;
+}
+
+div#blog {
+  background-color: #3498DB;
+}
+
+div#rss {
+  background-color: #F1C40F;
+}
+
+div#weibo {
+  background-color: #E74C3C;
+}
+
+div#github {
+  background-color: #7F8C8D;
+}

@@ -6,19 +6,19 @@ description: "巢鹏的Pensieve文章目录"
 
 <!--:
 for(category in categories!){
---> 
-	<div class="window_c category_item">
-		<div class="entry_title">
+-->
+	<div class="category-item">
+		<div class="post-title">
 			<h1>
 				<a name="${category.key}"></a>${category.key}
 			</h1>
 		</div>
 
-		<div class="entry_content" >
+		<div class="posts" >
 			<ul>
 			<!--:for(article in category.value){-->
 			<li>
-				<a href="${article.relativelink}" class="title_link">${article.meta.title}</a>
+				<a href="${article.relativelink}" class="title-link">${article.meta.title}</a>
 			</li>
 			<!--:}-->
 			</ul>

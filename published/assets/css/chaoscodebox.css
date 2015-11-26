@@ -1,0 +1,36 @@
+.codebox {
+  margin: 20px 0 10px 0;
+  font-family: 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
+  background-color: #E7E7E7;
+  border: 1px solid #E7E7E7;
+}
+
+span.code-lang {
+  margin-left: 8px;
+  font-size: 15px;
+}
+pre.prettyprint {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+pre > code {
+  margin: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  word-wrap: normal;
+  white-space: pre;
+  background-color: #E7E7E7;
+  color: #000000;
+}
+ol.linenums {
+  margin: 0 0 0 0;
+}
+button.copy {
+  font-size: 8px;
+  background-color: #FFFFFF;
+  padding: 2px 12px 0 12px;
+  border-radius: 3px;
+  border-width: 1px;
+}

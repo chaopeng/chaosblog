@@ -1,27 +1,36 @@
-<div class="namebox">
+<div>
 	<div class="left">
 		<img alt="avatar" src="${author.avatar}">
 	</div>
-	<div class="right">
-		<a href="mailto:${author.mail}" target="_blank">联系我 <i class="fa fa-envelope"></i></a>
-		<br>
-		<a href="${author.weibo}" target="_blank">关注我的微博 <i class="fa fa-weibo"></i></a>
-		<br>
-		<a href="${author.github}" target="_blank">关注我的开源 <i class="fa fa-github"></i></a>
-		<br>
-	</div>
+	<ul class="right">
+		<li><a href="mailto:${author.mail}"><i class="fa fa-envelope-o"></i> E-Mail</a></li>
+		<li><a href="${author.weibo}" target="_blank"><i class="fa fa-weibo"></i> Weibo</a></li>
+		<li><a onclick="javascript:openMyWechat('${author.wechat}');" href="javascript:void(0);"><i class="fa fa-wechat"></i>Wechat</a></li>
+		<li><a href="${author.github}" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+	</ul>
 </div>
 
+<div>
+	<h2>分享</h2>
+	<a class="share wb" onclick="javascript:shareToWeibo();" href="javascript:void(0);"><i class="fa fa-weibo fa-2x"></i></a>
+	<a class="share wc" href="javascript:shareToWechat();" target="_blank"><i class="fa fa-wechat fa-2x"></i></a>
+</div>
 
-<form><fieldset class="line"><legend>友情链接</legend></fieldset></form>
-<ul>
-	<li><a href="http://www.wutianqi.com/" target="_blank">TankyWoo基神的博客</a></li>
-    <li><a href="http://www.thislinux.com/" target="_blank">龙哥的博客</a></li>
-</ul>
+<div>
+	<h2>友情链接</h2>
+	<ul>
+		<li><a href="http://www.wutianqi.com/" target="_blank">TankyWoo基神的博客</a></li>
+		<li><a href="http://www.thislinux.com/" target="_blank">龙哥的博客</a></li>
+	</ul>
+</div>
 
-<form><fieldset class="line"><legend>最新评论</legend></fieldset></form>
-<div class="ds-recent-comments" data-num-items="2" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+<div>
+	<h2>最新评论</h2>
+	<div class="ds-recent-comments" data-num-items="2" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+</div>
 
-
-<form><fieldset class="line"><legend>声明</legend></fieldset></form>
-本博客仅供自娱自乐，<br>不喜勿喷。<br>欢迎捐助！
+<div>
+	<h2>声明</h2>
+	本博客仅供自娱自乐。
+	<br>欢迎捐助！
+</div>

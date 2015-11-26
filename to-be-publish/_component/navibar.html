@@ -1,42 +1,51 @@
-<nav class="navbar-nav navbar-inverse navbar-fixed-top ">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="${config.path}/index.html">${config.blogname}</a>
-        </div>
-        <div class="navbar-collapse">
-            <ul class="nav navbar-nav">
-                <!--:
-                for(navi in naviLs){
-                    var cls = "";
-                    if(navi.meta.title == article.meta.title){
-                        cls = "active";
-                    }-->
-                <li class="${cls}">
-                    <a href="${config.path}/${navi.name}/${navi.name}.html">${navi.meta.title}</a>
-                </li>
-                <!--:
-                }-->
-            </ul>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <!-- mobile -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="${config.path}/index.html">${config.blogname}</a>
+      </div>
 
-            <ul class="navbar-right nav navbar-nav">
-                <li>
-                    <form class="navbar-form navbar-search" name="searchform" action="javascript:search();">
-                        <input class="search-query" type="text" placeholder="Search" id="search"/>
-                        <a href="javascript:search();"><i class="icon-search icon-white"></i></a>
-                    </form>
-                </li>
-                <li>
-                    <a id="rss" href="${config.path}/rss.xml">
-                        <i class="fa fa-rss fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <!--:
+                  for(navi in naviLs){
+                      var cls = "";
+                      if(navi.meta.title == article.meta.title){
+                          cls = "active";
+                      }-->
+          <li class="${cls}">
+            <a href="${config.path}/${navi.name}/${navi.name}.html">${navi.meta.title}</a>
+          </li>
+          <!--:
+                  }-->
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-form navbar-search">
+            <form role="search" action="javascript:search();">
+              <div class="form-group input-group">
+                <input id="search-input" type="text" class="form-control" placeholder="Search">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </span>
+              </div>
+            </form>
+          </li>
+          <li>
+            <a class="f2x" href="${config.path}/rss.xml"><i class="fa fa-rss fa-2x"></i></a>
+          </li>
+        </ul>
+
+      </div>
     </div>
+  </div>
+  <!-- /.container-fluid -->
 </nav>
