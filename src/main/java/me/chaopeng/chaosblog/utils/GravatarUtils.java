@@ -17,14 +17,12 @@ public class GravatarUtils {
      *              - monsterid 小怪物
      *              - wavatar 用不同面孔和背景组合生成的头像
      *              - retro 八位像素复古头像
-     * @param size  (1~512)
      * @param rate  (g, pg, r, x) 默认g
      * @server
      */
-    public static String getAvatar(String server, String email, String size, String d, String rate) {
+    public static String getAvatar(String server, String email, String d, String rate) {
         StringBuilder sb = new StringBuilder(server).append("/avatar/");
         sb.append(Md5Utils.getMD5(email.toLowerCase()));
-        sb.append("?s=").append(size);
         if (!Strings.isNullOrEmpty(d)) {
             sb.append("&d=").append(d);
         }
@@ -34,7 +32,7 @@ public class GravatarUtils {
         return sb.toString();
     }
 
-    public static String getAvatar(String server, String email, String size) {
-        return getAvatar(server, email, size, "", "");
+    public static String getAvatar(String server, String email) {
+        return getAvatar(server, email, "", "");
     }
 }

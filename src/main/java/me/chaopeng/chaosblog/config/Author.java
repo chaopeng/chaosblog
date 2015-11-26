@@ -26,7 +26,7 @@ public class Author {
     }
 
     public String getGravatar() {
-        return gravatar;
+        return GravatarUtils.getAvatar(this.gravatarserver, this.mail);
     }
 
     public void setGravatar(String gravatar) {
