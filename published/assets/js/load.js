@@ -1,4 +1,4 @@
-var duoshuoQuery = {short_name:"chaosblogtest"};
+var duoshuoQuery = {short_name:"chaopeng"};
 (function() {
   var ds = document.createElement('script');
   ds.type = 'text/javascript';ds.async = true;
