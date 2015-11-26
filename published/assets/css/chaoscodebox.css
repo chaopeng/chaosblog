@@ -16,14 +16,10 @@ pre.prettyprint {
   margin: 0;
   overflow-x: auto;
 }
-pre > code {
-  margin: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  word-wrap: normal;
+pre code {
   white-space: pre;
-  background-color: #E7E7E7;
-  color: #000000;
+  word-break: normal;
+  word-wrap: normal;
 }
 ol.linenums {
   margin: 0 0 0 0;

@@ -11,7 +11,7 @@ body {
 .navbar-default {
   background-color: #F5F5F5;
 }
-.navbar-nav > li > a.f2x {
+.navbar-nav li a.f2x {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -32,7 +32,7 @@ body {
 .post-title {
   margin-top: 0;
 }
-.post-title > h1 {
+.post-title h1 {
   font-size: 20px;
   font-weight: bold;
   margin-top: 0;
@@ -43,7 +43,7 @@ body {
   padding: 5px;
   border-bottom: 1px solid #777777;
 }
-.post-title div > i {
+.post-title div i {
   margin-left: 10px;
   padding-bottom: 5px;
 }
@@ -78,7 +78,7 @@ body {
 
 /*toc*/
 
-.toc > ul {
+.toc ul {
   padding-left: 20px;
 }
 
@@ -103,7 +103,7 @@ body {
 .cc-icon {
   text-align: center;
 }
-.cc-icon > a {
+.cc-icon a {
   text-decoration: none;
 }
 .copyright {
@@ -128,28 +128,28 @@ body {
   height: 95px;
   width: 95px;
 }
-ul.right > li {
+ul.right li {
   list-style: none;
 }
-ul.right > li > a {
+ul.right li a {
   color: #404040;
   margin-left: 20px;
 }
-ul.right > li > a {
+ul.right li a {
   text-decoration: none;
 }
-.sidebar > div > h2 {
+.sidebar div h2 {
   font-size: 15px;
   font-weight: bold;
   border-bottom: 1px solid #CCCCCC;
 }
-.sidebar > div > ul {
+.sidebar div ul {
   padding-left: 0;
 }
-.sidebar > div > ul > li {
+.sidebar div ul li {
   list-style: none;
 }
-.sidebar > div > ul > li > a {
+.sidebar div ul li a {
   color: #404040;
 }
 a.share {
