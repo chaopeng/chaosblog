@@ -15,6 +15,7 @@ public class Author {
     private String weibo;
     private String github;
     private String wechat;
+    private String disqus;
 
 
     public String getMail() {
@@ -26,7 +27,7 @@ public class Author {
     }
 
     public String getGravatar() {
-        return GravatarUtils.getAvatar(this.gravatarserver, this.mail);
+        return GravatarUtils.getAvatar(this.gravatarserver, this.gravatar);
     }
 
     public void setGravatar(String gravatar) {
@@ -63,6 +64,14 @@ public class Author {
 
     public void setWechat(String wechat) {
         this.wechat = wechat;
+    }
+
+    public String getDisqus() {
+        return disqus;
+    }
+
+    public void setDisqus(String disqus) {
+        this.disqus = disqus;
     }
 
     public static Author getIns() {
