@@ -52,8 +52,6 @@ public class NaviPages {
                 template.binding("config", Blog.getIns());
                 s = template.render();
 
-                DirUtils.mkdir(Blog.getIns().getOutputpath() + article.getPath());
-
                 fw = new FileWriter(Blog.getIns().getOutputpath()
                         + article.getRelativelink());
                 fw.write(s);

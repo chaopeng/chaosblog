@@ -71,7 +71,7 @@ public class Article {
                 while (numStart.matcher(name).find()) {
                     name = name.substring(1);
                 }
-                relativelink = Blog.getIns().getPath() + "/" + name + "/" + name + ".html";
+                relativelink = Blog.getIns().getPath() + "/" + name + ".html";
                 path = Blog.getIns().getPath() + "/" + name;
             }
 
