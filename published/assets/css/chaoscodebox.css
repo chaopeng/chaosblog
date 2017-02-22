@@ -16,6 +16,16 @@ pre.prettyprint {
   margin: 0;
   overflow-x: auto;
 }
+pre.unprettyprint {
+  background-color: #FFFFFF;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow-x: auto;
+}
 pre code {
   white-space: pre;
   word-break: normal;

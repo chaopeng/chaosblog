@@ -16,13 +16,13 @@ function shareToWeibo() {
 }
 
 function shareToWechat() {
-  var site = window.location.href;
+  var url = window.location.href;
 
   BootstrapDialog.show({
     size: BootstrapDialog.SIZE_SMALL,
     message: '<p>微信扫一扫二维码分享</p><div id="url-qr"></div>',
     onshown: function(dialogRef) {
-      $("#url-qr").qrcode(site);
+      $("#url-qr").qrcode(url);
     },
   });
 }
