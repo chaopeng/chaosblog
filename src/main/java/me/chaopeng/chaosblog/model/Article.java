@@ -1,17 +1,15 @@
 package me.chaopeng.chaosblog.model;
 
 import me.chaopeng.chaosblog.config.Blog;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import me.chaopeng.chaosblog.utils.DirUtils;
-import me.chaopeng.chaosblog.utils.ExecUtils;
 import me.chaopeng.chaosblog.utils.FileUtils;
 import me.chaopeng.chaosblog.utils.JsonUtils;
+import me.chaopeng.chaosblog.utils.MarkdownUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.regex.Pattern;
 
 /**
@@ -89,14 +87,7 @@ public class Article {
                 sb.append(line + "\n");
 
             if (type.equals("md")) {
-                FileWriter fw = new FileWriter("temp");
-                fw.write(sb.toString());
-                fw.close();
-
-                text = ExecUtils.run(Blog.getIns().getMarkdownengine()
-                        + " temp");
-
-                DirUtils.rm("temp");
+                text = MarkdownUtils.toHTML(sb.toString());
             } else {
                 text = sb.toString();
             }

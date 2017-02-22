@@ -9,7 +9,6 @@ public class Blog {
 
     private String site;
     private String path;
-    private String markdownengine;
     private String author;
     private String blogname;
     private String inputpath;
@@ -29,14 +28,6 @@ public class Blog {
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public String getMarkdownengine() {
-        return markdownengine;
-    }
-
-    public void setMarkdownengine(String markdownengine) {
-        this.markdownengine = markdownengine;
     }
 
     public String getAuthor() {

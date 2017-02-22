@@ -3,8 +3,6 @@ blog:
   path: /blog
   author: ChaoPeng
   blogname: 巢鹏的Pensieve
-  # set the markdown engine which you like
-  markdownengine: python3 -m markdown -x toc -x footnotes -x fenced_code -x tables
   inputpath: /Users/chaopeng/workspace/chaosblog/to-be-publish
   outputpath: /Users/chaopeng/workspace/chaosblog/published
 
